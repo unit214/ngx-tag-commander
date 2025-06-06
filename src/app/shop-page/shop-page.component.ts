@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TagCommanderService } from 'ngx-tag-commander';
+import { CommonModule } from '@angular/common';
+import { TagCommanderService, TcSetVarsDirective, TcEventDirective } from 'ngx-tag-commander';
 
 
 @Component({
   selector: 'app-shop-page',
+  standalone: true,
+  imports: [CommonModule, TcSetVarsDirective, TcEventDirective],
   templateUrl: './shop-page.component.html',
   styleUrls: ['./shop-page.component.scss'],
 })

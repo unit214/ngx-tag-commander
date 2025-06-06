@@ -1,9 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {firstValueFrom} from 'rxjs';
+import { MarkdownModule } from 'ngx-markdown';
 
 @Component({
   selector: 'app-index-page',
+  standalone: true,
+  imports: [MarkdownModule, HttpClientModule],
   templateUrl: './index-page.component.html',
   styleUrls: ['./index-page.component.scss']
 })

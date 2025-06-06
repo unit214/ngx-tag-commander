@@ -6,9 +6,10 @@ import { TcSetVarsDirective } from './tc-set-vars.directive/tc-set-vars.directiv
 import { TcEventDirective } from './tc-event.directive/tc-event.directive';
 
 @NgModule({
-  declarations: [TcSetVarsDirective, TcEventDirective],
   imports: [
-    CommonModule
+    CommonModule,
+    TcSetVarsDirective,
+    TcEventDirective
   ],
   exports: [TcSetVarsDirective, TcEventDirective],
   providers: [TagCommanderService]

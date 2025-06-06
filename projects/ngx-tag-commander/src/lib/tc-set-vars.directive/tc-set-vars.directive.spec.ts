@@ -3,6 +3,8 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {TagCommanderService, TcSetVarsDirective} from 'ngx-tag-commander';
 
 @Component({
+  standalone: true,
+  imports: [TcSetVarsDirective],
   template: `
     <div [tcSetVars]="testVars"></div>`
 })
@@ -19,7 +21,7 @@ describe('TcSetVarsDirective', () => {
     mockTcService = jasmine.createSpyObj('TagCommanderService', ['setTcVars']);
 
     TestBed.configureTestingModule({
-      declarations: [TcSetVarsDirective, DivComponent],
+      imports: [TcSetVarsDirective, DivComponent],
       providers: [
         {provide: TagCommanderService, useValue: mockTcService}
       ]

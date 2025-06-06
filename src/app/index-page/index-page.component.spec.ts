@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { IndexPageComponent } from './index-page.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
@@ -9,8 +10,7 @@ describe('IndexPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      declarations: [ IndexPageComponent ]
+      imports: [HttpClientTestingModule, IndexPageComponent, MarkdownModule.forRoot()],
     })
     .compileComponents();
   }));

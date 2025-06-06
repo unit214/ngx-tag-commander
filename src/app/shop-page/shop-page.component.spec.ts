@@ -1,7 +1,7 @@
 import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
-
-import {ShopPageComponent} from './shop-page.component';
-import {WindowRef} from 'ngx-tag-commander';
+import { CommonModule } from '@angular/common';
+import { ShopPageComponent } from './shop-page.component';
+import { WindowRef, TcSetVarsDirective, TcEventDirective } from 'ngx-tag-commander';
 
 class MockWindowRef {
   nativeWindow = {tc_vars: {}};
@@ -13,7 +13,7 @@ describe('ShopPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ShopPageComponent],
+      imports: [ShopPageComponent, CommonModule, TcSetVarsDirective, TcEventDirective],
       providers: [{provide: WindowRef, useClass: MockWindowRef}]
     })
       .compileComponents();

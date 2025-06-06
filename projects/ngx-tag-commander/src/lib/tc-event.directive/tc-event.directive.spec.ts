@@ -3,6 +3,8 @@ import {TestBed} from '@angular/core/testing';
 import {TagCommanderService, TcEventDirective} from 'ngx-tag-commander';
 
 @Component({
+  standalone: true,
+  imports: [TcEventDirective],
   template: `
     <button [tcEvent]="event"></button>`
 })
@@ -11,6 +13,8 @@ class ButtonWithoutLabelAndObjComponent {
 }
 
 @Component({
+  standalone: true,
+  imports: [TcEventDirective],
   template: `
     <button [tcEvent]="event" [tcEventLabel]="eventLabel" [tcEventObj]="eventObj"></button>`
 })
@@ -27,7 +31,7 @@ describe('TcEventDirective', () => {
     mockTcService = jasmine.createSpyObj('TagCommanderService', ['triggerEvent']);
 
     TestBed.configureTestingModule({
-      declarations: [TcEventDirective, ButtonWithoutLabelAndObjComponent, ButtonWithLabelAndObjComponent],
+      imports: [TcEventDirective, ButtonWithoutLabelAndObjComponent, ButtonWithLabelAndObjComponent],
       providers: [
         {provide: TagCommanderService, useValue: mockTcService},
       ]
